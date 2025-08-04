@@ -6,9 +6,10 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && apt-get install -y \
     python3-pip \
     portaudio19-dev \
+    python3-tk \
     ros-dev-tools \
     && rm -rf /var/lib/apt/lists/*
-RUN pip3 install PyAudio
+RUN pip3 install PyAudio matplotlib
 
 # Set up workspace
 WORKDIR /ros2_ws

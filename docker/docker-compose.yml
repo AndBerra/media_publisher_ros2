@@ -1,22 +1,12 @@
 # docker-compose.yml
 services:
   media_publisher:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: media_publisher_runner
-    
-    env_file:
-      - .env
-
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+      - MPLBACKEND=TkAgg
     volumes:
       - ../:/ros2_ws/src/media_publisher
-      
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw      
     devices:
       - "/dev/snd:/dev/snd"
-    group_add:
-      - "${AUDIO_GID}"
-    network_mode: "host"
-
-    tty: true
-    stdin_open: true

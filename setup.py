@@ -1,6 +1,7 @@
 import os
 from glob import glob
-from setuptools import setup
+from setuptools import setup, find_packages
+
 
 package_name = "media_publisher"
 
@@ -8,7 +9,8 @@ setup(
     name=package_name,
     version="0.1.0",
     package_dir={"": "src"},
-    packages=[package_name],
+    # packages=[package_name],
+    packages=find_packages(where="src"),
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
         ("share/" + package_name, ["package.xml"]),
@@ -24,6 +26,7 @@ setup(
     entry_points={
         "console_scripts": [
             "mic_publisher = media_publisher.microphone_publisher:main",
+            "audio_visualizer = media_publisher.audio_visualizer:main",
         ],
     },
 )
