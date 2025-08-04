@@ -10,7 +10,7 @@ services:
       - .env
 
     volumes:
-      - .:/ros2_ws/src/media_publisher
+      - ../:/ros2_ws/src/media_publisher
       
     devices:
       - "/dev/snd:/dev/snd"
