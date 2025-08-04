@@ -10,3 +10,4 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw      
     devices:
       - "/dev/snd:/dev/snd"
+      - "/dev/video0:/dev/video0"

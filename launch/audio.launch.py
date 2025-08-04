@@ -1,14 +1,13 @@
-import os
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
 
 def generate_launch_description():
     """
-    Launches the microphone publisher and the Matplotlib visualizer.
+    Launches audio-related nodes: microphone publisher and audio visualizer.
     """
 
-    # micro publisher
+    # Microphone Publisher
     mic_publisher_node = Node(
         package="media_publisher",
         executable="mic_publisher",
@@ -18,13 +17,11 @@ def generate_launch_description():
             {
                 "chunk_size": 1024,
                 "rate": 44100,
-                "channels": 1,
-                "audio_topic": "audio",
             }
         ],
     )
 
-    # audio visualizer
+    # Audio Visualizer
     audio_visualizer_node = Node(
         package="media_publisher",
         executable="audio_visualizer",
@@ -32,4 +29,9 @@ def generate_launch_description():
         output="screen",
     )
 
-    return LaunchDescription([mic_publisher_node, audio_visualizer_node])
+    return LaunchDescription(
+        [
+            mic_publisher_node,
+            audio_visualizer_node,
+        ]
+    )

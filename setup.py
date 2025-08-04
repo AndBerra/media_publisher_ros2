@@ -27,6 +27,7 @@ setup(
         "console_scripts": [
             "mic_publisher = media_publisher.microphone_publisher:main",
             "audio_visualizer = media_publisher.audio_visualizer:main",
+            "camera_publisher = media_publisher.camera_publisher:main",
         ],
     },
 )
