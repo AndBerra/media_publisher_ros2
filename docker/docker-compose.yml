@@ -2,6 +2,7 @@
 services:
   media_publisher:
     build: .
+    container_name: media_publisher_runner
     environment:
       - DISPLAY=${DISPLAY}
       - MPLBACKEND=TkAgg
