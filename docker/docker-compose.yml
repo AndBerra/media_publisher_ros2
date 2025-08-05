@@ -8,6 +8,7 @@ services:
       - MPLBACKEND=TkAgg
     volumes:
       - ../:/ros2_ws/src/media_publisher
+      - ../rosbag:/ros2_bags
       - /tmp/.X11-unix:/tmp/.X11-unix:rw      
     devices:
       - "/dev/snd:/dev/snd"
