@@ -10,7 +10,7 @@
 
 </div>
 
-This project provides a robust, out-of-the-box solution for handling common media tasks in ROS 2. It's designed for rapid prototyping and development, with all dependencies managed inside a Docker container.
+This project provides a complete, Dockerized ROS 2 pipeline that captures live video from your computer's webcam and audio from its microphone. It publishes these streams as standard ROS 2 topics, offering an out-of-the-box solution for rapid prototyping and integrating real-world sensor data into robotics applications.
 
 ---
 
