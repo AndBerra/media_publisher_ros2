@@ -108,7 +108,7 @@ Inside the container's shell, you have several options:
 Run the audio and video pipelines simultaneously. The `rqt_image_view` window will appear on your desktop.
 
 ```bash
-ros2 launch media_publisher all_media.launch.py
+ros2 launch media_publisher media.launch.py
 ```
 
 #### **Option B: Launch Audio Only**
@@ -129,10 +129,10 @@ You can record all published topics by adding the `record_bag:=true` argument to
 
 ```bash
 # Example: Launch everything and record a bag file
-ros2 launch media_publisher all_media.launch.py record_bag:=true
+ros2 launch media_publisher media.launch.py record_bag:=true
 ```
 
-- The bag file (e.g., `rosbag2_2023_10_27_...`) will be saved on your **host machine** in the project's root directory.
+- The bag file will be saved in a new, timestamped folder (e.g., `rosbag2_2023_10_27_...`) inside the **`ros2_bags/`** directory on your **host machine**. This directory will be created automatically in your project root.
 - Press `Ctrl+C` in the launch terminal to stop the nodes and finalize the bag recording.
 
 ## Troubleshooting
